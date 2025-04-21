@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -388,20 +390,347 @@
         footer {
             background-color: var(--dark-purple);
             color: var(--white);
-            padding: 50px 0 20
-          </button>
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--gold);
+        }
+        
+        .social-media {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--gold);
+            color: var(--dark-purple);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Glam <span>Gaze</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#book" class="cta-button">Book Now</a>
         </div>
-      </motion.div>
-
-      <div className="stars">
-        {[...Array(5)].map((_, i) => (
-          <Star key={i} className="star" />
-        ))}
-      </div>
-
-      <div className="text-sm text-white mt-2 text-center">
-        Rated 5 stars by our fabulous clients
-      </div>
-    </div>
-  );
-}
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Beautiful Lashes Start Here</h1>
+            <p>Glam Gaze Lash Bar is dedicated to giving you the stunning lashes you deserve with our expert technicians and premium products.</p>
+            <a href="#book" class="cta-button">Book Your Appointment</a>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer a variety of lash services to enhance your natural beauty at amazing prices.</p>
+            </div>
+            <div class="service-cards">
+                <div class="service-card">
+                    <div class="service-image" style="background: url('/api/placeholder/300/200') center/cover;"></div>
+                    <div class="service-content">
+                        <h3>Classic Lashes</h3>
+                        <p>Natural-looking enhancement with one extension applied to each natural lash.</p>
+                        <div class="price">Starting at $99</div>
+                        <a href="#book" class="cta-button">Book Now</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background: url('/api/placeholder/300/200') center/cover;"></div>
+                    <div class="service-content">
+                        <h3>Hybrid Lashes</h3>
+                        <p>A mix of classic and volume techniques for a fuller, textured look.</p>
+                        <div class="price">Starting at $129</div>
+                        <a href="#book" class="cta-button">Book Now</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background: url('/api/placeholder/300/200') center/cover;"></div>
+                    <div class="service-content">
+                        <h3>Volume Lashes</h3>
+                        <p>Multiple fine extensions applied to each natural lash for a dramatic effect.</p>
+                        <div class="price">Starting at $149</div>
+                        <a href="#book" class="cta-button">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image" style="background: url('/api/placeholder/500/400') center/cover;"></div>
+                <div class="about-text">
+                    <h2>About Glam Gaze Lash Bar</h2>
+                    <p>Glam Gaze Lash Bar is dedicated to making you look and feel amazing with stunning lash sets that enhance your natural beauty.</p>
+                    <p>Our team of passionate lash artists uses only premium products and the latest techniques to ensure you leave our salon looking your absolute best.</p>
+                    <p>We take pride in our clean, welcoming environment and our commitment to exceptional customer service.</p>
+                    <a href="#team" class="cta-button">Meet Our Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Amazing Team</h2>
+                <p>Meet our talented lash artists who will transform your look.</p>
+            </div>
+            <div class="team-members">
+                <div class="team-member">
+                    <div class="member-image" style="background: url('/api/placeholder/250/250') center/cover;"></div>
+                    <div class="member-info">
+                        <h3>Sarah Johnson</h3>
+                        <p>Lead Lash Artist</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image" style="background: url('/api/placeholder/250/250') center/cover;"></div>
+                    <div class="member-info">
+                        <h3>Jessica Lee</h3>
+                        <p>Senior Lash Technician</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image" style="background: url('/api/placeholder/250/250') center/cover;"></div>
+                    <div class="member-info">
+                        <h3>Olivia Chen</h3>
+                        <p>Lash Specialist</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image" style="background: url('/api/placeholder/250/250') center/cover;"></div>
+                    <div class="member-info">
+                        <h3>Emma Wilson</h3>
+                        <p>Junior Lash Artist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="testimonial-container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial">
+                <p>"My lashes look amazing! The staff was professional and made me feel so comfortable. I'll definitely be back!"</p>
+                <div class="client-name">- Michelle R.</div>
+            </div>
+            <div class="testimonial">
+                <p>"I've tried several lash bars in the area, and Glam Gaze is by far the best. Worth every penny!"</p>
+                <div class="client-name">- Samantha T.</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>We'd love to hear from you! Book your appointment or ask us any questions.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>123 Beauty Street, Suite 101, Your City</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>(555) 123-4567</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>info@glamgazelashbar.com</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">⏰</div>
+                            <div>Mon-Sat: 9am-7pm, Sun: Closed</div>
+                        </div>
+                    </div>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">IG</a>
+                        <a href="#" class="social-icon">TW</a>
+                    </div>
+                </div>
+                <div class="contact-form" id="book">
+                    <h3>Book Your Appointment</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Your Phone</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Select Service</label>
+                            <select id="service">
+                                <option value="classic">Classic Lashes</option>
+                                <option value="hybrid">Hybrid Lashes</option>
+                                <option value="volume">Volume Lashes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Any Special Requests</label>
+                            <textarea id="message"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Book Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Glam Gaze</h3>
+                    <p>Your destination for beautiful, stunning lashes that make you feel confident and gorgeous.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Classic Lashes</a></li>
+                        <li><a href="#services">Hybrid Lashes</a></li>
+                        <li><a href="#services">Volume Lashes</a></li>
+                        <li><a href="#services">Lash Lifts</a></li>
+                        <li><a href="#services">Lash Tinting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Get in Touch</h3>
+                    <p>(555) 123-4567</p>
+                    <p>info@glamgazelashbar.com</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">IG</a>
+                        <a href="#" class="social-icon">TW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Glam Gaze Lash Bar. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
