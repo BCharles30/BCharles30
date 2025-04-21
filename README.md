@@ -1,16 +1,55 @@
-## Hi there 👋
+## Glam Gazee Lash Bar
 
-<!--
-**BCharles30/BCharles30** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+import React from "react";
+import { motion } from "framer-motion";
+import { Star } from "lucide-react";
+import "./style.css";
 
-Here are some ideas to get you started:
+export default function GlamGazeeLandingPage() {
+  return (
+    <div className="main-container">
+      <motion.h1 
+        initial={{ opacity: 0, y: -20 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.6 }}
+        className="title"
+      >
+        Glam Gazee Lash Bar
+      </motion.h1>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+      <motion.p 
+        initial={{ opacity: 0, y: 20 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.8 }}
+        className="description"
+      >
+        Dedicated to providing top-tier lash services by our amazing professionals. Experience luxury lash sets starting at just <span className="font-bold">$99</span>.
+      </motion.p>
+
+      <motion.div 
+        initial={{ scale: 0.8, opacity: 0 }} 
+        animate={{ scale: 1, opacity: 1 }} 
+        transition={{ duration: 0.6 }}
+      >
+        <div className="card">
+          <div className="text-2xl font-semibold text-center">
+            Book Your Glam Experience Today
+          </div>
+          <button className="btn-primary">
+            Book Now
+          </button>
+        </div>
+      </motion.div>
+
+      <div className="stars">
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} className="star" />
+        ))}
+      </div>
+
+      <div className="text-sm text-white mt-2 text-center">
+        Rated 5 stars by our fabulous clients
+      </div>
+    </div>
+  );
+}
